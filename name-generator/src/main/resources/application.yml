@@ -3,6 +3,8 @@ server:
     relaxed-query-chars: ['{','}','[',']']
 
 spring:
+  liquibase:
+    enabled: true
   datasource:
     driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://postgres:5432/postgres
