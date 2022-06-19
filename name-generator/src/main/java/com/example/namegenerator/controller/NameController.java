@@ -1,6 +1,6 @@
 package com.example.namegenerator.controller;
 
-import com.example.namegenerator.dto.PetFilterDto;
+import com.example.namegenerator.dto.filter.Filter;
 import com.example.namegenerator.entity.PetName;
 import com.example.namegenerator.service.NameService;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class NameController {
     }
 
     @GetMapping(params = "filter")
-    public List<PetName> generateName(@RequestParam PetFilterDto filter) {
+    public List<PetName> generateName(@RequestParam Filter filter) {
         return nameService.findNameByFilter(filter);
     }
 }

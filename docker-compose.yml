@@ -10,11 +10,11 @@ services:
       POSTGRES_PASSWORD: "postgres"
     ports:
       - "5432:5432"
-    volumes:
-      - ./postgresScripts:/docker-entrypoint-initdb.d
 
   name_generator:
     build: ./name-generator
+    depends_on:
+      - postgres
     container_name: "name-generator"
     ports:
       - "8080:8080"
