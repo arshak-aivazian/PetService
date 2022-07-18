@@ -18,3 +18,12 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
+
+keycloak:
+  realm: my_realm
+  resource: my_client
+  auth-server-url: ${KEYCLOAK_SERVER_URL}
+  public-client: true
+  bearer-only: true
+  credentials:
+    secret: dOrAUhZmOr66rHl7YQ5fJExAcqA03F8h
