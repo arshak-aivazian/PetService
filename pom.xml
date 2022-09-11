@@ -11,6 +11,8 @@
 
     <modules>
         <module>name-generator</module>
+        <module>user-service</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
