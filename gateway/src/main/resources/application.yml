@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${KEYCLOAK_SERVER_URL:http://localhost:8484/auth}/realms/my_realm/protocol/openid-connect/certs
+  kafka:
+    bootstrap-servers: kafka0:29090
+  cloud:
+    stream:
+      bindings:
+        producer-out-0:
+          destination: name-generator

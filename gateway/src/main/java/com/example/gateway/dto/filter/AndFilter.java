@@ -1,4 +1,4 @@
-package com.example.namegenerator.dto.filter;
+package com.example.gateway.dto.filter;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,8 +11,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrFilter implements Filter {
-    private final String type = "OR";
+public class AndFilter implements Filter {
+    private final String type = "AND";
 
     private List<Filter> value;
 }
