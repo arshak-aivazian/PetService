@@ -1,4 +1,4 @@
-package com.example.namegenerator.dto.filter;
+package com.example.dto.filter;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;

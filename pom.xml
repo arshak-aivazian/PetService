@@ -13,6 +13,8 @@
         <module>name-generator</module>
         <module>user-service</module>
         <module>gateway</module>
+        <module>workflow</module>
+        <module>core-dto</module>
     </modules>
 
     <properties>
