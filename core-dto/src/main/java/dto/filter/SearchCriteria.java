@@ -1,4 +1,4 @@
-package com.example.namegenerator.dto.filter;
+package dto.filter;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

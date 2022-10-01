@@ -1,7 +1,7 @@
 package com.example.namegenerator.repository;
 
-import com.example.namegenerator.dto.filter.SearchCriteria;
 import com.example.namegenerator.entity.PetName;
+import dto.filter.SearchCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
 
@@ -29,5 +29,12 @@ public class PetNameSpecification implements Specification<PetName> {
             return root.get(criteria.getKey()).in(values);
         }
         return null;
+    }
+
+    private enum Operaton {
+        GR,
+        LO,
+        EQ,
+        IN
     }
 }

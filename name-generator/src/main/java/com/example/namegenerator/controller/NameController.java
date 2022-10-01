@@ -1,12 +1,10 @@
 package com.example.namegenerator.controller;
 
-import com.example.namegenerator.dto.filter.Filter;
 import com.example.namegenerator.entity.PetName;
 import com.example.namegenerator.service.NameService;
+import dto.PetNameRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/generate")
@@ -16,13 +14,8 @@ public class NameController {
 
     private final NameService nameService;
 
-    @GetMapping
-    public PetName generateRandomName() {
-        return nameService.getRandomName();
-    }
-
-    @GetMapping(params = "filter")
-    public List<PetName> generateName(@RequestParam Filter filter) {
-        return nameService.findNameByFilter(filter);
+    @PostMapping
+    public PetName generateName(@RequestBody PetNameRequest request) {
+        return nameService.getRandomName(request);
     }
 }

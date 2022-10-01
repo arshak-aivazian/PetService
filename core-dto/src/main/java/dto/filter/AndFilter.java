@@ -1,4 +1,4 @@
-package com.example.gateway.dto.filter;
+package dto.filter;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

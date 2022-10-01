@@ -1,7 +1,7 @@
 package com.example.namegenerator.converter;
 
-import com.example.namegenerator.dto.filter.Filter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dto.filter.Filter;
 import lombok.SneakyThrows;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

@@ -1,6 +1,6 @@
 package com.example.namegenerator.config;
 
-import com.example.namegenerator.dto.InputNotificationMessage;
+import dto.UpdateUserStatisticMessage;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,12 +21,12 @@ public class KafkaProducerConfig {
   private String mqServer;
 
   @Bean
-  public KafkaTemplate<String, InputNotificationMessage> kafkaTemplate() {
+  public KafkaTemplate<String, UpdateUserStatisticMessage> kafkaTemplate() {
     return new KafkaTemplate<>(producerFactory());
   }
 
   @Bean
-  public ProducerFactory<String, InputNotificationMessage> producerFactory() {
+  public ProducerFactory<String, UpdateUserStatisticMessage> producerFactory() {
     Map<String, Object> configs = new HashMap<>();
     configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, mqServer);
     configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);

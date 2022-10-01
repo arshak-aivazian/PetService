@@ -1,9 +1,9 @@
 package com.example.userservice.controller;
 
-import com.example.userservice.dto.EventMessage;
 import com.example.userservice.mapper.StatisticMapper;
 import com.example.userservice.service.UserInfoService;
 import com.example.userservice.service.UserStatisticService;
+import dto.UpdateUserStatisticMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +22,7 @@ public class UserStatisticController {
     private final StatisticMapper mapper;
 
     @GetMapping
-    public List<EventMessage> getUserStatistics(@RequestParam Long userId) {
+    public List<UpdateUserStatisticMessage> getUserStatistics(@RequestParam Long userId) {
         var userInfo = userInfoService.getUserInfo(userId);
         var statisitics = statisticService.getUserStatistics(userId);
         return statisitics.stream()

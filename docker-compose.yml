@@ -75,9 +75,9 @@ services:
   gateway:
     build: ./gateway
     depends_on:
-      - kafka0
       - keycloak
     environment:
+      - NAMEGEN_URL=http://name-generator:8080
       - KEYCLOAK_SERVER_URL=http://keycloak:8484/auth
     container_name: "gateway"
     ports:

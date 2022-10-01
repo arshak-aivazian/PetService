@@ -1,6 +1,6 @@
 package com.example.userservice.config;
 
-import com.example.userservice.dto.EventMessage;
+import dto.UpdateUserStatisticMessage;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,15 +23,15 @@ public class KafkaConsumerConfig {
 
     @Bean
     public KafkaListenerContainerFactory<?> kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, EventMessage> factory =
+        ConcurrentKafkaListenerContainerFactory<String, UpdateUserStatisticMessage> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
         return factory;
     }
 
     @Bean
-    public ConsumerFactory<String, EventMessage> consumerFactory() {
-        JsonDeserializer<EventMessage> deserializer = new JsonDeserializer<>(EventMessage.class);
+    public ConsumerFactory<String, UpdateUserStatisticMessage> consumerFactory() {
+        JsonDeserializer<UpdateUserStatisticMessage> deserializer = new JsonDeserializer<>(UpdateUserStatisticMessage.class);
         deserializer.setRemoveTypeHeaders(false);
         deserializer.addTrustedPackages("*");
         deserializer.setUseTypeMapperForKey(true);

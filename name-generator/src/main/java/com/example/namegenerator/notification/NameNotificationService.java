@@ -1,6 +1,6 @@
-package com.example.gateway.service.notification;
+package com.example.namegenerator.notification;
 
-import com.example.gateway.dto.NotificationMessage;
+import dto.UpdateUserStatisticMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.function.StreamBridge;
@@ -16,7 +16,7 @@ public class NameNotificationService implements NotificationService {
     private final String BINDING_NAME = "producer-out-0";
 
     @Override
-    public void notificate(NotificationMessage message) {
+    public void notificate(UpdateUserStatisticMessage message) {
         stream.send(BINDING_NAME, MessageBuilder.withPayload(message).build());
         log.info("published message: "+message);
     }

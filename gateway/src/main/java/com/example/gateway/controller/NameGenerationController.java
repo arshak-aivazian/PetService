@@ -1,8 +1,7 @@
 package com.example.gateway.controller;
 
-import com.example.gateway.dto.filter.Filter;
 import com.example.gateway.service.namegeneration.NameGenerationService;
-import com.example.gateway.service.userservice.UserService;
+import dto.filter.Filter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,15 +12,14 @@ import org.springframework.web.bind.annotation.*;
 public class NameGenerationController {
 
     private final NameGenerationService service;
-    private final UserService userService;
 
     @GetMapping
-    public void generateRandomName() {
-        service.generate();
+    public String generateRandomName() {
+        return service.generate();
     }
 
     @PostMapping
-    public void generateName(@RequestBody Filter filter) {
-        service.generateByFilter(filter);
+    public String generateName(@RequestBody Filter filter) {
+        return service.generateByFilter(filter);
     }
 }
