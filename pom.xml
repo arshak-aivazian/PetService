@@ -11,6 +11,9 @@
 
     <modules>
         <module>name-generator</module>
+        <module>user-service</module>
+        <module>gateway</module>
+        <module>core-dto</module>
     </modules>
 
     <properties>

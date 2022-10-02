@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user-statistics
+      author: Aivazian Arshak
+      changes:
+        - createTable:
+            tableName: user_statistics
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_userinfo_statistic
+                    references: user_info(id)
+              - column:
+                  name: event
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: value
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: timestamp
+                  constraints:
+                    nullable: false

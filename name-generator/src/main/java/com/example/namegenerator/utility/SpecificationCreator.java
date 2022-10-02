@@ -1,11 +1,11 @@
 package com.example.namegenerator.utility;
 
-import com.example.namegenerator.dto.filter.AndFilter;
-import com.example.namegenerator.dto.filter.Filter;
-import com.example.namegenerator.dto.filter.OrFilter;
-import com.example.namegenerator.dto.filter.SearchCriteria;
 import com.example.namegenerator.entity.PetName;
 import com.example.namegenerator.repository.PetNameSpecification;
+import dto.filter.AndFilter;
+import dto.filter.Filter;
+import dto.filter.OrFilter;
+import dto.filter.SearchCriteria;
 import lombok.experimental.UtilityClass;
 import org.springframework.data.jpa.domain.Specification;
 

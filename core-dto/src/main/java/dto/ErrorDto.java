@@ -1,4 +1,4 @@
-package com.example.namegenerator.error;
+package dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
