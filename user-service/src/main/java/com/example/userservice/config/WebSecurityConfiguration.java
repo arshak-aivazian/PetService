@@ -22,7 +22,6 @@ import java.util.stream.Collectors;
 
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@Profile("!test")
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
