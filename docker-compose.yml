@@ -60,28 +60,37 @@ services:
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
+
+  eureka-server:
+    build: ./eureka-server
+    container_name: "eureka-server"
+    ports:
+      - "8761:8761"
+
+  api-gateway:
+    build: ./api-gateway
+    container_name: "api-gateway"
+    depends_on:
+      - keycloak
+      - eureka-server
+    environment:
+      - KEYCLOAK_SERVER_URL=http://keycloak:8484/auth
+      - EUREKA_SERVER_URL=http://eureka-server:8761
+    ports:
+      - "8080:8080"
+
   name_generator:
     build: ./name-generator
     depends_on:
       - postgres
       - keycloak
       - kafka0
+      - eureka-server
+      - api-gateway
     environment:
       - KEYCLOAK_SERVER_URL=http://keycloak:8484/auth
+      - EUREKA_SERVER_URL=http://eureka-server:8761
     container_name: "name-generator"
-    ports:
-      - "8080:8080"
-
-  gateway:
-    build: ./gateway
-    depends_on:
-      - keycloak
-    environment:
-      - NAMEGEN_URL=http://name-generator:8080
-      - KEYCLOAK_SERVER_URL=http://keycloak:8484/auth
-    container_name: "gateway"
-    ports:
-      - "8081:8081"
 
   user-service:
     build: ./user-service
@@ -89,8 +98,9 @@ services:
       - keycloak
       - postgres
       - kafka0
+      - eureka-server
+      - api-gateway
     environment:
       - KEYCLOAK_SERVER_URL=http://keycloak:8484/auth
+      - EUREKA_SERVER_URL=http://eureka-server:8761
     container_name: "user-service"
-    ports:
-      - "8082:8082"

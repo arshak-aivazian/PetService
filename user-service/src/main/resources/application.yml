@@ -1,7 +1,9 @@
 server:
-  port: 8082
+  port: 0
 
 spring:
+  application:
+    name: user-service
   security:
     oauth2:
       resourceserver:
@@ -30,3 +32,8 @@ spring:
       bindings:
         eventConsumer-in-0:
           destination: user-events
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761}/eureka

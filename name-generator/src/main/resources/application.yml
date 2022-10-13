@@ -1,8 +1,9 @@
 server:
-  tomcat:
-    relaxed-query-chars: ['{','}','[',']']
+  port: 0
 
 spring:
+  application:
+    name: name-generator
   liquibase:
     enabled: true
   datasource:
@@ -30,3 +31,8 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761}/eureka
