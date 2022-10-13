@@ -1,1 +1,4 @@
 /core-dto/target/
+/eureka-server/.mvn/
+/eureka-server/mvnw
+/eureka-server/mvnw.cmd
