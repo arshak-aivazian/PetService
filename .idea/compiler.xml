@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="name-generator" />
+        <module name="keycloack-security-starter" />
         <module name="core-dto" />
         <module name="demo" />
         <module name="eureka-server" />
@@ -27,6 +28,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="advertisement-service" target="17" />
       <module name="demo" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -36,6 +38,7 @@
       <module name="demo" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="keycloack-security-starter" options="-parameters" />
       <module name="name-generator" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>

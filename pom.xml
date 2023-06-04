@@ -15,6 +15,7 @@
         <module>name-generator</module>
         <module>user-service</module>
         <module>core-dto</module>
+        <module>keycloak-security-starter</module>
     </modules>
 
     <properties>
