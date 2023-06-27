@@ -7,10 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-gateway" />
+        <module name="config-server" />
         <module name="name-generator" />
-        <module name="keycloack-security-starter" />
         <module name="core-dto" />
+        <module name="api-gateway" />
+        <module name="keycloak-security-starter" />
         <module name="demo" />
         <module name="eureka-server" />
       </profile>
@@ -30,15 +31,18 @@
     <bytecodeTargetLevel>
       <module name="advertisement-service" target="17" />
       <module name="demo" target="17" />
+      <module name="keycloack-security-starter" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="keycloack-security-starter" options="-parameters" />
+      <module name="keycloak-security-starter" options="-parameters" />
       <module name="name-generator" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
