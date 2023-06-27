@@ -1,6 +1,4 @@
 spring:
   cloud:
     config:
-      server:
-        git:
-          basedir: /tmp
+      enabled: false
